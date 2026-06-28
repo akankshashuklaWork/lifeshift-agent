@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeShift — Personal Life Transition Concierge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=4" />
+  </head>
+  <body>
+    <div class="bg-orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="noise"></div>
+    </div>
+
+    <div class="app-shell">
+      <header class="glass-panel header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 3 4 9v12h16V9l-8-6Z"></path>
+              <path d="M9 21v-6h6v6"></path>
+            </svg>
+          </div>
+          <div>
+            <h1>LifeShift</h1>
+            <p>Plan, budget, and navigate life's biggest changes</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="ghost-btn" id="newChatBtn" title="Start a new conversation">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 5v14M5 12h14"></path>
+            </svg>
+            New chat
+          </button>
+          <div class="status-pill" id="statusPill">
+            <span class="status-dot" id="statusDot"></span>
+            <span class="status-text" id="statusText">Connecting…</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="glass-panel chat-panel">
+        <section class="welcome" id="welcome">
+          <div class="welcome-copy">
+            <span class="eyebrow">Concierge Agents · Capstone</span>
+            <h2>What's changing in your life?</h2>
+            <p>
+              Share your timeline, household, and priorities. Pick a scenario below to
+              prefill a template — edit it, then send.
+            </p>
+          </div>
+          <div class="scenario-grid" id="scenarioGrid">
+            <button type="button" class="scenario-card" data-prompt="I'm relocating to [city] in [number] weeks. My household includes [who is moving]. Help me plan and budget.">
+              <span class="scenario-icon">🏠</span>
+              <span class="scenario-title">Relocation</span>
+              <span class="scenario-desc">Move cities — edit the template, then send</span>
+            </button>
+            <button type="button" class="scenario-card" data-prompt="I'm switching careers from [current role] to [target role]. My timeline is about [number] months. Where should I start?">
+              <span class="scenario-icon">💼</span>
+              <span class="scenario-title">Career change</span>
+              <span class="scenario-desc">Pivot roles — edit the template, then send</span>
+            </button>
+            <button type="button" class="scenario-card" data-prompt="We're having our first baby in [number] months. Help me with a preparation checklist and budget.">
+              <span class="scenario-icon">👶</span>
+              <span class="scenario-title">New parent</span>
+              <span class="scenario-desc">Prepare for baby — edit the template, then send</span>
+            </button>
+            <button type="button" class="scenario-card" data-prompt="I'm retiring in [number] months. What milestones should I plan for?">
+              <span class="scenario-icon">🌅</span>
+              <span class="scenario-title">Retirement</span>
+              <span class="scenario-desc">Phase retirement — edit the template, then send</span>
+            </button>
+          </div>
+        </section>
+
+        <div class="messages-wrap">
+          <div class="messages" id="messages" aria-live="polite"></div>
+          <div class="scroll-fade" aria-hidden="true"></div>
+        </div>
+
+        <div class="thinking-bar hidden" id="thinkingBar" aria-live="polite">
+          <span class="thinking-spinner"></span>
+          <span id="thinkingText">LifeShift is thinking…</span>
+        </div>
+
+        <form class="composer" id="composer">
+          <div class="composer-inner">
+            <textarea
+              id="userInput"
+              rows="1"
+              placeholder="Describe your transition — timeline, location, who's involved…"
+              aria-label="Message LifeShift"
+            ></textarea>
+            <div class="composer-meta">
+              <span class="composer-hint">Enter to send · Shift+Enter for new line</span>
+              <button type="submit" id="sendBtn" aria-label="Send message">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2 11 13"></path>
+                  <path d="M22 2 15 22 11 13 2 9 22 2z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </main>
+
+      <footer class="footer-note">
+        Planning support only — not medical, legal, or financial advice.
+      </footer>
+    </div>
+
+    <script src="./app.js?v=5" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "lifeshift_intro",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Hi LifeShift, what kind of life transitions can you help me plan?"
+          }
+        ]
+      }
+    },
+    {
+      "eval_case_id": "relocation_plan",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "I'm relocating to Austin with my partner and two kids in about 12 weeks. We have a $25k relocation budget. What should our plan look like?"
+          }
+        ]
+      }
+    },
+    {
+      "eval_case_id": "career_change_checklist",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "I'm preparing for a career change from teaching to product management. Give me a preparation-phase checklist and the first three priorities."
+          }
+        ]
+      }
+    },
+    {
+      "eval_case_id": "new_parent_budget",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "We're expecting our first baby in four months in Chicago. Household size is 2 today. What budget categories should we plan for?"
+          }
+        ]
+      }
+    }
+  ]
+}
